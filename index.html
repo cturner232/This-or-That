@@ -25,7 +25,7 @@ There are no known issues at the moment
 -->
 	
    <head> 
-      <title>Cold or Allergy</title>  
+      <title>shin splint or muscle cramp</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,28 +34,28 @@ There are no known issues at the moment
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
-		var allergy_percent = 0;
-		var cold_percent = 0;
+        var shinSplint_count = 0; <!--changed all the counts and percent-->
+        var cramp_count = 0;
+		var shinSplint_percent = 0;
+		var cramp_percent = 0;
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-			alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count);
+        function shinSplintAdd(){ <!-- changed shinSplint-->
+            shinSplint_count = shinSplint_count + 1;
+			alert("shinSplint_count is " + shinSplint_count + "\ncramp_count is " + cramp_count);
 		}
          
 
-         function coldAdd(){
-             cold_count = cold_count + 1;
-			 alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count);
+         function crampAdd(){ <!-- changed to cramp-->
+             cramp_count = cramp_count + 1;
+			 alert("shinSplint_count is " + shinSplint_count + "\ncramp_count is " + cramp_count);
         }
         
 		function changeText(){
-			var allergy_percent = allergy_count/(allergy_count + cold_count)*100
-			var cold_percent = cold_count/(allergy_count + cold_count)*100
+			var shinSplint_percent = shinSplint_count/(shinSplint_count + cramp_count)*100
+			var cramp_percent = cramp_count/(shinSplint_count + cramp_count)*100
 		    var initalText = document.getElementById("results");
-			initalText.innerHTML = "Probability it is allergies = " + allergy_percent + "% <br> Probability it is a cold = " + cold_percent + "%"
+			initalText.innerHTML = "Probability it is shinSplint = " + shinSplint_percent + "% <br> Probability it is a cramp = " + cramp_percent + "%"
 		}
 	
 		
@@ -77,24 +77,28 @@ There are no known issues at the moment
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 97%);
 }
 
   .page:target {
     left: 0vw;
     z-index: 1;
 }
+.w3-container h1 {
+    font-family: Garamond, serif;
+}
+
 </style>
 
 <body style="background-color: hsl ( 325, 46%, 79%) ;"></body>
-<div id="header" class="w3-container w3-flat-turquoise">
-	<h1>Cold or Allergies?</h1>
+<div id="header" class="w3-container w3-flat-pomegranate">
+	<h1>Shin splints or Muscle cramps??</h1> <!-- changed the name of the title-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>This is helping see if you are dealing with shin splints or muscle cramps. </p>
 	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<a href="#one" class="w3-btn w3-grey w3-round-xxlarge"> Press to start!! </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -102,86 +106,86 @@ There are no known issues at the moment
 </div>
 	
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!-- color changed-->
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p> Are you having itchy eyes?</p>    
-    	<a href="#two" onclick="allergyAdd()" class="w3-btn w3-blue w3-round"> yes </a>
-        <a href="#two" onclick="coldAdd()" class="w3-btn w3-red w3-round"> no </a>
+        <p> Do you have Aching shin pain(A) or is it sudden muscle tighting(B)?</p>   <!-- new question--> 
+    	<a href="#two" onclick="shinSplintAdd()" class="w3-btn w3-grey w3-round-xxlarge"> A </a>
+        <a href="#two" onclick="crampAdd()" class="w3-btn w3-red w3-round-xxlarge"> B </a>
     </div>
 </div>
 
 <div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate"> <!-- new color-->
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you running a fever?</p>
-	    <a href="#three" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#three" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+		<p> Did you have pain build gradually or did it start suddenly?</p> <!-- new question -->
+	    <a href="#three" onclick="shinSplintAdd()" class="w3-btn w3-grey w3-round-xxlarge"> Gradually </a>
+        <a href="#three" onclick="crampAdd()" class="w3-btn w3-red w3-round-xxlarge"> Suddenly </a>
     </div>
 </div>	
 
 <div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate">
 		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p> Are you coughing a lot?</p>
-	    <a href="#four" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#four" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+		<p> Does your shin hurt when running?</p>
+	    <a href="#four" onclick="shinSplintAdd()" class="w3-btn w3-gray w3-round-xxlarge"> Yes </a>
+        <a href="#four" onclick="crampAdd()" class="w3-btn w3-red w3-round-xxlarge"> No </a>
     </div>
 </div>
 <div class="page" id="four">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate">
 		<h1>Question 4</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you feel aches and pains?</p>
-	    <a href="#five" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> yes </a>
-        <a href="#five" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+		<p> Does your calf feel like it is in a knot? </p>
+	    <a href="#five" onclick="crampAdd()" class="w3-btn w3-grey w3-round-xxlarge"> yes </a>
+        <a href="#five" onclick="shinSplintAdd()" class="w3-btn w3-red w3-round-xxlarge"> No </a>
     </div>
 </div>
 <div class="page" id="five">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate">
 		<h1>Question 5 </h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p> Do you have a sore throat?</p>
-	    <a href="#six" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-		<a href="#six" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+		<p> Does resting help reduce your pain? </p>
+	    <a href="#six" onclick="shinSplintAdd()" class="w3-btn w3-grey w3-round-xxlarge"> Yes </a>
+		<a href="#six" onclick="crampAdd()" class="w3-btn w3-red w3-round-xxlarge"> No </a>
     </div>
 </div>
 <div class="page" id="six">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate">
 		<h1>Question 6</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p> Did you get sick in the winter?</p>
-	    <a href="#seven" onclick="coldAdd()" class="w3-btn w3-blue w3-round"> Yes </a>
-        <a href="#seven" onclick="allergyAdd()" class="w3-btn w3-red w3-round"> No </a>
+		<p> Does your calf visually tighten? </p>
+	    <a href="#seven" onclick="crampAdd()" class="w3-btn w3-grey w3-round-xxlarge"> Yes </a>
+        <a href="#seven" onclick="shinSplintAdd()" class="w3-btn w3-red w3-round-xxlarge"> No </a>
     </div>
 </div>
 <div class="page" id="seven">
-	<div class="w3-container w3-flat-carrot">
+	<div class="w3-container w3-flat-pomegranate">
 		<h1>Results</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p id="results"> Press on the bottom to see your results!</p>
-	    <a onclick="changeText()" class="w3-btn w3-grey w3-round"> Click here for results!</a>
+		<p id="results"> Press on the button to see your results!</p>
+	    <a onclick="changeText()" class="w3-btn w3-black w3-round-xxlarge"> Click here for results!</a>
     </div>
 </div>
 
-<footer class="w3-bottom w3-container w3-flat-peter-river">
-	<p>DIY!</p>
+<footer class="w3-bottom w3-container w3-flat-pomegranate">
+	<p>Footer!</p>
 </footer>
 
 </body>
